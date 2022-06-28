@@ -1,0 +1,22 @@
+configuration {
+ modi: "drun,run,calc,filebrowser,window";
+ font: "hack 13";
+ width: 20;
+ show-icons: true;
+ lines: 10;
+ sidebar-mode: true;
+   filebrowser {
+      /** Directory the file browser starts in. */
+      directory: "/home/nathanael";
+      /**
+        * Sorting method. Can be set to:
+        *   - "name"
+        *   - "mtime" (modification time)
+        *   - "atime" (access time)
+        *   - "ctime" (change time)
+        */
+      sorting-method: "name";
+      /** Group directories before files. */
+      directories-first: true;
+   }
+ }
