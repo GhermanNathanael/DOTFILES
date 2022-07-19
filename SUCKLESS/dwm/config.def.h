@@ -1,5 +1,7 @@
 /* See LICENSE file for copyright and license details. */
 
+#include "/home/nathanael/.config/SUCKLESS/dwm/themes/bluetheme.h"
+
 /* appearance */
 static unsigned int borderpx  = 2;        /* border pixel of windows */
 static const unsigned int gappx     = 6;        /* gaps between windows */
@@ -10,16 +12,11 @@ static int topbar             = 1;        /* 0 means bottom bar */
 #define ICONSPACING 5 /* space between icon and title */
 //static const int user_bh            = 2;         2 is the default spacing around the bar's font 
 static const int horizpadbar        = 2;        /* horizontal padding for statusbar */
-static const int vertpadbar         = 1;        /* vertical padding for statusbar */
-static char font[]            = { "JetBrains Mono:style=Regular:size=11.5" };
+static const int vertpadbar         = 3;        /* vertical padding for statusbar */
+//static char font[]            = { "SpaceMono Nerd Font Mono:style=Regular:size=12"};
+static char font[]            = { "Anonymice Nerd Font Mono:style=Regular,Book:size=13.5" };
 static char dmenufont[]       = "JetBrains Mono:style=Regular:size=11";
 static char *fonts[]          = { font };
-static char normbgcolor[]           = "#111111";
-static char normbordercolor[]       = "#444444";
-static char normfgcolor[]           = "#bbbbbb";
-static char selfgcolor[]            = "#eeeeee";
-static char selbordercolor[]        = "#1515e1";
-static char selbgcolor[]            = "#1515e1"; // #0000FF #1515e1 #3a3ae9 #1500ff
 static char *colors[][3] = {
        /*               fg           bg           border   */
        [SchemeNorm] = { normfgcolor, normbgcolor, normbordercolor },
@@ -97,9 +94,9 @@ ResourcePref resources[] = {
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
-	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
+	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,			XK_r,      spawn,	   SHCMD("rofi -show drun") },
-	{ MODKEY,           XK_w,      spawn,      {.v = web} },
+	{ MODKEY,                       XK_w,      spawn,          {.v = web} },
 	{ MODKEY,                       XK_v,      togglebar,      {0} },
 	{ MODKEY|ShiftMask,             XK_j,      rotatestack,    {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_k,      rotatestack,    {.i = -1 } },
@@ -109,9 +106,9 @@ static Key keys[] = {
 	{ MODKEY,                       XK_d,      incnmaster,     {.i = -1 } },
 	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
 	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
-	{ MODKEY,                       XK_Return, zoom,           {0} },
+	{ MODKEY|ShiftMask,                       XK_Return, zoom,           {0} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
-	{ MODKEY|ShiftMask,             XK_c,      killclient,     {0} },
+	{ MODKEY,                       XK_c,      killclient,     {0} },
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
 	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
 	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
@@ -137,7 +134,7 @@ static Key keys[] = {
 	TAGKEYS(                        XK_7,                      6)
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
-    { MODKEY|ShiftMask,             XK_r,      self_restart,   {0} },
+        { MODKEY|ShiftMask,             XK_r,      self_restart,   {0} },
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
 	{ MODKEY|ControlMask|ShiftMask, XK_q,      quit,           {1} }, 
 };

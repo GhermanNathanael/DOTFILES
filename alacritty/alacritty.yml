@@ -65,11 +65,12 @@ scrolling:
 font:
   # Normal (roman) font face
   normal:
-
+    
     family: JetBrains Mono
     style: Medium
 
   bold:
+
     family: JetBrains Mono
     style: Bold
 
