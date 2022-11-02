@@ -1,22 +1,71 @@
 configuration {
- modi: "drun,run,calc,filebrowser,window";
- font: "hack 13";
- width: 20;
- show-icons: true;
- lines: 10;
- sidebar-mode: true;
-   filebrowser {
-      /** Directory the file browser starts in. */
-      directory: "/home/nathanael";
-      /**
-        * Sorting method. Can be set to:
-        *   - "name"
-        *   - "mtime" (modification time)
-        *   - "atime" (access time)
-        *   - "ctime" (change time)
-        */
-      sorting-method: "name";
-      /** Group directories before files. */
-      directories-first: true;
-   }
- }
+  display-drun: "apps:";
+  display-window: "windows:";
+  drun-display-format: "{icon} {name}";
+  font: "monospace 16";
+  modi: "drun,run,calc,window";
+  show-icons: true;
+  icon-theme: "arc";
+}
+
+@theme "/dev/null"
+
+* {
+  bg: #000000;
+  bg-alt: #0c0ed0;
+
+  fg: #FFFFFF;
+  fg-alt: #FFFFFF;
+  
+  background-color: @bg;
+
+  border: 2;
+  margin: 1;
+  padding: 0;
+  spacing: 0;
+}
+
+
+window {
+  width: 40%;
+  border-color: @bg-alt;
+}
+
+prompt {
+  text-color: @fg-alt;
+}
+
+element {
+  padding: 5;
+  text-color: @fg-alt;
+}
+
+element selected {
+  text-color: @fg;
+  border-color: @bg-alt;
+}
+
+element-text {
+  backgroung-color: inherit;
+  text-color: inherit;
+}
+
+element-icon {
+  size: 50;
+}
+
+entry {
+  background-color: @bg-alt;
+  padding: 12;
+  text-color: @fg;
+}
+
+inputbar {
+  children: [prompt, entry];
+}
+
+listview {
+  background-color: @bg;
+  columns: 4;
+  lines: 4;
+}
